@@ -1,21 +1,76 @@
-# QA API Automation Samples 🚀
-👉 Este repositório contém exemplos práticos de automação de testes de API utilizando diferentes ferramentas e linguagens.
+# QA API Automation 🚀
+👉 Este repositório é um exemplo prático de automação de testes de API backend utilizando TypeScript, Jest e Supertest, com foco na API pública [ReqRes](https://reqres.in/).
 
-## Tecnologias utilizadas
-- TypeScript + Jest + Supertest
-- Java + RestAssured (opcional)
-- Postman + Newman (opcional)
+## ✅ Tecnologias Utilizadas
 
-## Estrutura
-- `/src/tests`: Casos de teste
-- `/src/utils`: Helpers e configurações
-- `/postman`: Coleções Postman (se aplicável)
+- **Node.js**
+- **TypeScript**
+- **Jest**
+- **Supertest**
+- **Ajv** (para validação de contrato - JSON Schema)
+- **GitHub Actions** (Pipeline CI/CD)
+- **GitHub Copilot** (assistente de código)
 
-## Principais cenários cobertos
-- Testes de métodos HTTP (GET, POST, PUT, DELETE)
-- Validação de status code, headers e body
-- Testes de contrato (JSON Schema)
-- Testes parametrizados
-- Exemplos de mock de API
+---
 
-## Como executar
+## 🚀 Estrutura de Pastas
+
+    qa-api-automation/
+    ├── .github/
+    │   └── workflows/
+    │       └── ci.yml
+    ├── src/
+    │   └── tests/
+    │       ├── get/
+    │       │   └── listUsers.test.ts
+    │       ├── post/
+    │       │   └── createUser.test.ts
+    │       ├── put/
+    │       │   └── updateUser.test.ts
+    │       ├── delete/
+    │       │   └── deleteUser.test.ts
+    │       ├── auth/
+    │       │   └── login.test.ts
+    │       └── contract/
+    │           └── userContract.test.ts
+    ├── schemas/
+    │   └── userSchema.json
+    ├── utils/
+    │   └── api-client.ts
+    ├── .gitignore
+    ├── jest.config.ts
+    ├── package.json
+    ├── tsconfig.json
+    ├── CopilotConfig.md
+    └── README.md
+
+
+---
+
+## 📌 Estrutura de Branches
+
+| Tipo de Branch | Regra |
+|---|---|
+| `main` | Branch base, apenas para PRs |
+| `feature/*`, `bugfix/*`, etc | Branchs livres para todos os colaboradores |
+| `prod` | Apenas o owner pode fazer merge |
+
+**👉 Proteção de branch ativa para a branch `prod`.**
+
+---
+
+## 📋 Como Rodar os Testes Localmente
+
+### Pré-requisitos:
+
+- Node.js >= 18.x
+- npm
+
+### Passos:
+
+```bash
+git clone https://github.com/seu-usuario/qa-api-automation.git
+cd qa-api-automation
+npm install
+npm run test
+
